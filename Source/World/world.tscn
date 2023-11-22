@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://cxju07dpcl6jc"]
+
+[ext_resource type="Texture2D" uid="uid://htt4sy6fk64p" path="res://Source/World/Grid_Texture/UE4_1m x 1m.png" id="1_0c7tm"]
+[ext_resource type="PackedScene" uid="uid://cerntmcwo872b" path="res://Source/Player/player.tscn" id="2_d7xmg"]
+[ext_resource type="Environment" uid="uid://bcf4nms3vjfg2" path="res://Source/World/WorldEnvironment.tres" id="3_5ma0h"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6a2i8"]
+albedo_color = Color(0.462745, 0.462745, 1, 1)
+albedo_texture = ExtResource("1_0c7tm")
+uv1_scale = Vector3(0.2, 0.2, 0.2)
+uv1_triplanar = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_hp65v"]
+material = SubResource("StandardMaterial3D_6a2i8")
+size = Vector2(1000, 1000)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_j4hct"]
+data = PackedVector3Array(500, 0, 500, -500, 0, 500, 500, 0, -500, -500, 0, 500, -500, 0, -500, 500, 0, -500)
+
+[node name="World" type="Node3D"]
+
+[node name="Environment_Node" type="Node" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Environment_Node"]
+environment = ExtResource("3_5ma0h")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment_Node"]
+transform = Transform3D(1.19209e-07, -0.866026, 0.5, 2.78059e-08, 0.5, 0.866025, -1, -8.93353e-08, 8.36853e-08, 0, 4, 0)
+light_color = Color(1, 0.996078, 0.976471, 1)
+shadow_enabled = true
+shadow_opacity = 0.8
+
+[node name="Ground" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_hp65v")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Ground"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_j4hct")
+
+[node name="Player" parent="." instance=ExtResource("2_d7xmg")]
