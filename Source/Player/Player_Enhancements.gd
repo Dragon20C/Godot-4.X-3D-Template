@@ -11,8 +11,8 @@ extends Node
 @export var Camera_Stabilizer_State : bool = true
 
 @export_group("Head Motion Values")
-@export var Frequency : float = 1.0
-@export var Amplitude : float = 0.15
+@export var Frequency : float = 1.2
+@export var Amplitude : float = 0.12
 var Stored_Time : float = 0.0
 
 @export_group("Footstep Sounds")
@@ -36,7 +36,7 @@ func Head_Motion(delta) -> void:
 		elif Motion.y > -0.01:
 			Stepped = false
 		
-		Camera.transform.origin = lerp(Camera.transform.origin,Motion,20 * delta)
+		Camera.transform.origin = lerp(Camera.transform.origin,Motion,15 * delta)
 		if Camera_Stabilizer_State:
 			Camera.look_at(Stabilizer_Marker.global_position)
 	else:

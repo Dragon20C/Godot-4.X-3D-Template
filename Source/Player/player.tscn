@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://cerntmcwo872b"]
+[gd_scene load_steps=9 format=3 uid="uid://cerntmcwo872b"]
 
 [ext_resource type="Script" path="res://Source/Player/player.gd" id="1_8eu0a"]
 [ext_resource type="Script" path="res://Source/Player/Player_Enhancements.gd" id="2_58lcl"]
 [ext_resource type="AudioStream" uid="uid://clj4hgyhc58i8" path="res://Source/Player/Audio/Footstep Sounds/step_1.wav" id="3_yxvkx"]
 [ext_resource type="AudioStream" uid="uid://cmb04xu7krn20" path="res://Source/Player/Audio/Footstep Sounds/step_2.wav" id="4_gnya3"]
 [ext_resource type="AudioStream" uid="uid://1nffnao2ci2n" path="res://Source/Player/Audio/Footstep Sounds/step_3.wav" id="5_xvyb5"]
+[ext_resource type="Script" path="res://Source/State Machine System/Player_State_Machine.gd" id="6_u8k0w"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_3mauv"]
 
@@ -12,6 +13,7 @@
 
 [node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("Head", "Camera_Stabilizer")]
 script = ExtResource("1_8eu0a")
+Sensitivity = 18.0
 Head = NodePath("Head")
 Camera_Stabilizer = NodePath("Head/Camera_Stabilizer")
 
@@ -42,5 +44,9 @@ Stabilizer_Marker = NodePath("../../Head/Camera_Stabilizer/Stabilizer_Marker")
 Player = NodePath("../..")
 Ground_Audio_Emitter = NodePath("../../Ground_Audio_Emitter")
 Footstep_Sounds = Array[AudioStreamWAV]([ExtResource("3_yxvkx"), ExtResource("4_gnya3"), ExtResource("5_xvyb5")])
+
+[node name="StateMachineSystem" type="Node" parent="System_Nodes" node_paths=PackedStringArray("Entity")]
+script = ExtResource("6_u8k0w")
+Entity = NodePath("../..")
 
 [node name="Ground_Audio_Emitter" type="AudioStreamPlayer3D" parent="."]

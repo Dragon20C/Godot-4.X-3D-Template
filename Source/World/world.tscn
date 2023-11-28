@@ -25,7 +25,7 @@ data = PackedVector3Array(500, 0, 500, -500, 0, 500, 500, 0, -500, -500, 0, 500,
 environment = ExtResource("3_5ma0h")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment_Node"]
-transform = Transform3D(1.19209e-07, -0.866026, 0.5, 2.78059e-08, 0.5, 0.866025, -1, -8.93353e-08, 8.36853e-08, 0, 4, 0)
+transform = Transform3D(0.822768, -0.469254, 0.320708, -0.112181, 0.419081, 0.900992, -0.557197, -0.777284, 0.292165, 0, 4, 0)
 light_color = Color(1, 0.996078, 0.976471, 1)
 shadow_enabled = true
 shadow_opacity = 0.8
