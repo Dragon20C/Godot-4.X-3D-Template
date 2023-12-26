@@ -16,6 +16,11 @@ func _ready():
 # Use the Add State function to add states to the machine.
 func Ready_States() -> void:
 	pass
+	# Example of adding states
+	#Add_State(Player_Idle_State.new(),Entity_States.Idle)
+	#Add_State(Player_Walk_State.new(),Entity_States.Walk)
+	#Add_State(Player_Sprint_State.new(),Entity_States.Sprint)
+	#Add_State(Player_Jump_State.new(),Entity_States.Jump)
 
 # A add state function so we can add the states to our states dictionary
 func Add_State(New_State : State, Enum_State : Entity_States) -> void:

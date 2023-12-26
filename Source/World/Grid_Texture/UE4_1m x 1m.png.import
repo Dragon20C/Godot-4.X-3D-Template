@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://htt4sy6fk64p"
-path.s3tc="res://.godot/imported/UE4_1m x 1m.png-4c8ea5d301ac1f072df21f3a96d85e98.s3tc.ctex"
+path="res://.godot/imported/UE4_1m x 1m.png-4c8ea5d301ac1f072df21f3a96d85e98.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://Source/World/Grid_Texture/UE4_1m x 1m.png"
-dest_files=["res://.godot/imported/UE4_1m x 1m.png-4c8ea5d301ac1f072df21f3a96d85e98.s3tc.ctex"]
+dest_files=["res://.godot/imported/UE4_1m x 1m.png-4c8ea5d301ac1f072df21f3a96d85e98.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

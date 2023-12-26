@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://cndjvxduaa6ud"]
+
+[ext_resource type="Script" path="res://Source/Final_Player/Player.gd" id="1_0tdeg"]
+[ext_resource type="AudioStream" uid="uid://clj4hgyhc58i8" path="res://Source/Player/Audio/Footstep Sounds/step_1.wav" id="2_mv47d"]
+[ext_resource type="AudioStream" uid="uid://cmb04xu7krn20" path="res://Source/Player/Audio/Footstep Sounds/step_2.wav" id="3_hqbk1"]
+[ext_resource type="AudioStream" uid="uid://1nffnao2ci2n" path="res://Source/Player/Audio/Footstep Sounds/step_3.wav" id="4_1g168"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_koreh"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fubjo"]
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_0tdeg")
+sound_effects = Array[AudioStream]([ExtResource("2_mv47d"), ExtResource("3_hqbk1"), ExtResource("4_1g168")])
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_koreh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_fubjo")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+
+[node name="Camera_stab" type="Node3D" parent="Head"]
+
+[node name="Camera3D" type="Camera3D" parent="Head/Camera_stab"]
+current = true
+
+[node name="Target_stab" type="Marker3D" parent="Head/Camera_stab"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15)
+
+[node name="AudioEmitter" type="AudioStreamPlayer3D" parent="."]

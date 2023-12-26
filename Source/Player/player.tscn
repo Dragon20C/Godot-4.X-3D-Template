@@ -37,11 +37,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -15)
 
 [node name="System_Nodes" type="Node" parent="."]
 
-[node name="Player_Enhancements" type="Node" parent="System_Nodes" node_paths=PackedStringArray("Camera", "Stabilizer_Marker", "Player", "Ground_Audio_Emitter")]
+[node name="Player_Enhancements" type="Node" parent="System_Nodes" node_paths=PackedStringArray("Camera", "Stabilizer_Marker", "Target", "Ground_Audio_Emitter")]
 script = ExtResource("2_58lcl")
 Camera = NodePath("../../Head/Camera_Stabilizer/Camera3D")
 Stabilizer_Marker = NodePath("../../Head/Camera_Stabilizer/Stabilizer_Marker")
-Player = NodePath("../..")
+Target = NodePath("../..")
 Ground_Audio_Emitter = NodePath("../../Ground_Audio_Emitter")
 Footstep_Sounds = Array[AudioStreamWAV]([ExtResource("3_yxvkx"), ExtResource("4_gnya3"), ExtResource("5_xvyb5")])
 

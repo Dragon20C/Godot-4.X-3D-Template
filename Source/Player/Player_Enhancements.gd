@@ -3,7 +3,7 @@ extends Node
 @export_group("Exports Required")
 @export var Camera : Camera3D 
 @export var Stabilizer_Marker : Marker3D
-@export var Player : CharacterBody3D
+@export var Target : CharacterBody3D
 @export var Ground_Audio_Emitter : AudioStreamPlayer3D
 
 @export_group("Head Motion States")
@@ -27,8 +27,8 @@ func _physics_process(delta) -> void:
 func Head_Motion(delta) -> void:
 	if not Head_Motion_State: return
 
-	if Player.velocity.length() > 0 and Player.is_on_floor():
-		Stored_Time += delta * Player.velocity.length()
+	if Target.velocity.length() > 0 and Target.is_on_floor():
+		Stored_Time += delta * Target.velocity.length()
 		var Motion = Bobbing_Motion()
 		if Motion.y < -Amplitude + 0.01 and not Stepped:
 			Stepped = true

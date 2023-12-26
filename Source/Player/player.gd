@@ -27,7 +27,7 @@ func Rotate_Player(event):
 	if event is InputEventMouseMotion:
 		#  -event.relative * deg_to_rad(BASE_SENSITIVITY) * Sensitivity
 		var Mouse_Motion = -event.relative * deg_to_rad(BASE_SENSITIVITY) * Sensitivity#-event.relative * Sensitivity
-		Head.rotate_y(Mouse_Motion.x)
+		rotate_y(Mouse_Motion.x)
 		Camera_Stabilizer.rotate_x(Mouse_Motion.y)
 		Camera_Stabilizer.rotation.x = clamp(Camera_Stabilizer.rotation.x, -PI / 2, PI / 2)
 
@@ -42,7 +42,7 @@ func Apply_Input() -> void:
 	Keys_Input = Input.get_vector("Left", "Right", "Forward", "Backward")
 
 func Handle_Movement() -> void:
-	var Direction = (Head.transform.basis * Vector3(Keys_Input.x, 0, Keys_Input.y)).normalized()
+	var Direction = (transform.basis * Vector3(Keys_Input.x, 0, Keys_Input.y)).normalized()
 	
 	
 	if Direction:
