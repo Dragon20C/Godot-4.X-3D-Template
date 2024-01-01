@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://cxju07dpcl6jc"]
+[gd_scene load_steps=12 format=3 uid="uid://cxju07dpcl6jc"]
 
 [ext_resource type="Texture2D" uid="uid://htt4sy6fk64p" path="res://Source/World/Grid_Texture/UE4_1m x 1m.png" id="1_0c7tm"]
 [ext_resource type="Environment" uid="uid://bcf4nms3vjfg2" path="res://Source/World/WorldEnvironment.tres" id="3_5ma0h"]
-[ext_resource type="PackedScene" uid="uid://cndjvxduaa6ud" path="res://Source/Final_Player/Player.tscn" id="3_8asiq"]
+[ext_resource type="PackedScene" uid="uid://cndjvxduaa6ud" path="res://Source/Player/Player.tscn" id="3_8asiq"]
+[ext_resource type="PackedScene" uid="uid://4awr1kl8sh2g" path="res://Source/Model/low_poly_model.tscn" id="4_v4pmq"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6a2i8"]
 albedo_color = Color(0.462745, 0.462745, 1, 1)
@@ -80,3 +81,6 @@ mesh = SubResource("BoxMesh_22tuv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D3/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_d1stq")
+
+[node name="LowPolyModel" parent="." instance=ExtResource("4_v4pmq")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -3, 0, -9)

@@ -3,18 +3,18 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://2hlijkvbxnxf"
-path="res://.godot/imported/Lowpolyhuman.glb-e4b6dec9052e7fb2b440381849f40e62.scn"
+uid="uid://nu38wa774a2k"
+path="res://.godot/imported/LowPolyModel.glb-d71c84141f354a8ce229342aeedcf3d6.scn"
 
 [deps]
 
-source_file="res://Source/Player/Model/Lowpolyhuman.glb"
-dest_files=["res://.godot/imported/Lowpolyhuman.glb-e4b6dec9052e7fb2b440381849f40e62.scn"]
+source_file="res://Source/Model/LowPolyModel.glb"
+dest_files=["res://.godot/imported/LowPolyModel.glb-d71c84141f354a8ce229342aeedcf3d6.scn"]
 
 [params]
 
-nodes/root_type="Node3D"
-nodes/root_name="Scene Root"
+nodes/root_type=""
+nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 meshes/ensure_tangents=true
@@ -22,6 +22,7 @@ meshes/generate_lods=true
 meshes/create_shadow_meshes=true
 meshes/light_baking=1
 meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
 skins/use_named_skins=true
 animation/import=true
 animation/fps=30
@@ -29,4 +30,5 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 import_script/path=""
 _subresources={}
+gltf/naming_version=1
 gltf/embedded_image_handling=1

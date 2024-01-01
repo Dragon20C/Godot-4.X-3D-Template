@@ -10,11 +10,11 @@ var Transitioning : bool = false
 # in the process function we check for a state change then we update it.
 
 func _ready():
-	Ready_States()
+	Register_States()
 	Current_State = States[Inital_State]
 
 # Use the Add State function to add states to the machine.
-func Ready_States() -> void:
+func Register_States() -> void:
 	pass
 	# Example of adding states
 	#Add_State(Player_Idle_State.new(),Entity_States.Idle)

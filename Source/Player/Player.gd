@@ -2,7 +2,7 @@
 # FPS player controller
 # Godot version : 4.2.1
 
-extends CharacterBody3D
+class_name Player extends CharacterBody3D
 
 @export_group("Bools")
 @export var mouse_capture : bool = true # Capture the mouse
@@ -11,7 +11,7 @@ extends CharacterBody3D
 @export var sprinting : bool = false # Check if the player is sprinting
 @export var allow_fall_input = true #Alow player to input move when falling
 @export_group("Parameters")
-@export var mouse_sensitivity : float = 0.003 # Mouse sensitivity 
+@export var mouse_sensitivity : float = 0.005 # Mouse sensitivity 
 @export var mouse_acceleration : float = 50.0 # Mouse acceleration
 @export var walk_speed : int = 6 # Player walk speed
 @export var sprint_speed : int = 10 # Player sprint speed
@@ -46,7 +46,7 @@ func _ready():
 
 func _input(event):
 	if event is InputEventMouseMotion && Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
-		apply_rotation(-event.relative * mouse_sensitivity)
+		apply_rotation(-event.relative * mouse_sensitivity * 0.1)
 	
 func apply_rotation(mouse_motion : Vector2) -> void:
 	rotate_y(mouse_motion.x)

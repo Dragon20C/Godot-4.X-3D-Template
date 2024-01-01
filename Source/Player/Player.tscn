@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://cndjvxduaa6ud"]
 
-[ext_resource type="Script" path="res://Source/Final_Player/Player.gd" id="1_0tdeg"]
-[ext_resource type="AudioStream" uid="uid://clj4hgyhc58i8" path="res://Source/Player/Audio/Footstep Sounds/step_1.wav" id="2_mv47d"]
-[ext_resource type="AudioStream" uid="uid://cmb04xu7krn20" path="res://Source/Player/Audio/Footstep Sounds/step_2.wav" id="3_hqbk1"]
-[ext_resource type="AudioStream" uid="uid://1nffnao2ci2n" path="res://Source/Player/Audio/Footstep Sounds/step_3.wav" id="4_1g168"]
+[ext_resource type="Script" path="res://Source/Player/Player.gd" id="1_0tdeg"]
+[ext_resource type="AudioStream" uid="uid://clj4hgyhc58i8" path="res://Source/Audio/Footstep Sounds/step_1.wav" id="2_mv47d"]
+[ext_resource type="AudioStream" uid="uid://cmb04xu7krn20" path="res://Source/Audio/Footstep Sounds/step_2.wav" id="3_hqbk1"]
+[ext_resource type="AudioStream" uid="uid://1nffnao2ci2n" path="res://Source/Audio/Footstep Sounds/step_3.wav" id="4_1g168"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_koreh"]
 
@@ -11,6 +11,7 @@
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_0tdeg")
+mouse_sensitivity = 0.008
 sound_effects = Array[AudioStream]([ExtResource("2_mv47d"), ExtResource("3_hqbk1"), ExtResource("4_1g168")])
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
